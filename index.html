@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="くらしのミカタは、学生から大人まで毎日の困りごとを解決するヒントを、わかりやすく届ける生活情報サイトです。">
+<meta name="theme-color" content="#123c3a">
+<title>くらしのミカタ｜毎日の「困った」に、わかりやすいヒント。</title>
+<style>
+:root{--ink:#172b2a;--muted:#607371;--green:#176b5b;--mint:#e6f4ee;--cream:#fbfaf6;--line:#e4eae5;--soft:#f0f5ef}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;line-height:1.7}
+a{color:inherit}.wrap{width:min(1080px,calc(100% - 36px));margin:auto}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.nav{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{font-weight:850;font-size:1.16rem;text-decoration:none;display:flex;align-items:center;gap:9px;white-space:nowrap}
+.brand-mark{display:grid;place-items:center;width:34px;height:34px;border-radius:11px;background:var(--green);color:#fff}
+nav{display:flex;gap:18px;font-size:.88rem;color:var(--muted)}nav a{text-decoration:none}
+.hero{padding:64px 0 54px;background:linear-gradient(115deg,#e9f4ed,#f6f5eb 62%,#fcefe2)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center}
+.eyebrow{display:inline-block;background:#fff;padding:5px 12px;border-radius:99px;color:var(--green);font-size:.82rem;font-weight:750}
+h1{font-size:clamp(2.15rem,5vw,3.8rem);line-height:1.22;letter-spacing:-.045em;margin:18px 0}
+.hero p{font-size:1.04rem;color:#536763;max-width:560px}
+.search{display:flex;gap:8px;background:#fff;border:1px solid #dce7df;padding:7px;border-radius:14px;max-width:580px;margin-top:24px}
+.search input{border:0;outline:0;min-width:0;flex:1;padding:10px;font:inherit;background:transparent}
+button,.button{border:0;background:var(--green);color:#fff;border-radius:10px;padding:10px 17px;font:inherit;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
+.hero-art{min-height:260px;border-radius:26px;background:#ffffff99;display:grid;place-items:center;position:relative;border:1px solid #ffffffb0}
+.orbit{width:210px;height:210px;border-radius:50%;background:#d6eadf;display:grid;place-items:center;position:relative}
+.orbit:before,.orbit:after{content:"";position:absolute;border-radius:50%;border:1px dashed #75a892;inset:17px}.orbit:after{inset:40px}
+.center-icon{width:92px;height:92px;border-radius:28px;background:var(--green);display:grid;place-items:center;color:#fff;font-size:2.8rem;z-index:1}
+.float{position:absolute;background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 12px;font-size:.85rem;font-weight:700}.f1{top:28px;left:12px}.f2{right:10px;top:62px}.f3{bottom:25px;left:24px}.f4{bottom:24px;right:18px}
+section{padding:54px 0}.section-head{margin-bottom:22px}h2{font-size:clamp(1.55rem,3vw,2.1rem);letter-spacing:-.03em;margin:0 0 6px}.sub{color:var(--muted);margin:0}
+.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.cat{background:#fff;border:1px solid var(--line);border-radius:17px;padding:17px;text-decoration:none;min-height:145px;transition:.2s}
+.cat:hover,.article:hover{transform:translateY(-2px);box-shadow:0 10px 24px #244b3b10}
+.cat-icon{font-size:1.7rem}.cat strong{display:block;margin:8px 0 2px}.cat small{color:var(--muted)}
+.ad-slot{border:1px dashed #aabbb1;background:#f7faf7;border-radius:13px;padding:14px;text-align:center;color:#73847a;font-size:.8rem;margin:25px auto;max-width:850px}
+.ad-slot strong{display:block;color:#65766c;font-size:.72rem;letter-spacing:.08em;margin-bottom:3px}
+.featured{background:var(--soft)}
+.articles{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.article{background:#fff;border:1px solid var(--line);border-radius:17px;padding:19px;transition:.2s}
+.tag{display:inline-block;background:var(--mint);color:var(--green);font-size:.74rem;font-weight:750;padding:3px 9px;border-radius:99px}
+.article h3{font-size:1.04rem;line-height:1.5;margin:10px 0 7px}.article p{color:var(--muted);font-size:.9rem;margin:0}
+.article details{margin-top:13px;border-top:1px solid var(--line);padding-top:10px}
+.article summary{color:var(--green);font-weight:700;cursor:pointer;font-size:.9rem}
+.article details p{margin-top:9px;line-height:1.8}
+.help{background:#123c3a;color:white;border-radius:22px;padding:30px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
+.help p{color:#d1e2db;margin:6px 0 0}.help .button{background:#fff;color:var(--green);white-space:nowrap}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.info-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
+.info-card h3{margin:0 0 8px}.info-card p{color:var(--muted);font-size:.9rem;margin:0}
+footer{background:#102f2d;color:#d6e5de;padding:28px 0;font-size:.86rem}
+.footer-row{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+footer a{color:#d6e5de;margin-right:12px}
+#results{margin-top:10px;color:var(--green);font-weight:650;min-height:1.4em}
+#empty{color:var(--muted);padding:16px 0}
+@media(max-width:760px){nav{gap:11px;font-size:.78rem}nav a:nth-child(2){display:none}.hero{padding:44px 0}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:220px}.categories{grid-template-columns:repeat(2,1fr)}.articles{grid-template-columns:1fr}.help{grid-template-columns:1fr}.help .button{justify-self:start}.info-grid{grid-template-columns:1fr}}
+@media(max-width:420px){.wrap{width:calc(100% - 28px)}.search button{padding:9px 12px}.cat{padding:14px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#"><span class="brand-mark">ミ</span>くらしのミカタ</a>
+<nav aria-label="メインナビ"><a href="#categories">カテゴリ</a><a href="#articles">お役立ち記事</a><a href="#about">サイトについて</a></nav>
+</div></header>
+<main>
+<section class="hero"><div class="wrap hero-grid">
+<div>
+<span class="eyebrow">毎日の「どうしよう」を、少し軽く。</span>
+<h1>困ったときの、<br>ちいさな道しるべ。</h1>
+<p>学校のこと、お金のこと、スマホのこと、暮らしのこと。知りたいことの入口を、やさしく・わかりやすくまとめます。</p>
+<form class="search" id="searchForm"><input id="query" type="search" placeholder="例：勉強の計画、節約、スマホ…" aria-label="知りたいことを検索"><button type="submit">探す</button></form>
+<div id="results" aria-live="polite"></div>
+</div>
+<div class="hero-art" aria-label="助け合いを表すイラスト"><div class="orbit"><div class="center-icon">＋</div></div><span class="float f1">📚 学び</span><span class="float f2">💡 ヒント</span><span class="float f3">🏠 暮らし</span><span class="float f4">🤝 サポート</span></div>
+</div></section>
+
+<div class="wrap"><div class="ad-slot"><strong>ADVERTISEMENT</strong>広告掲載スペース（広告サービスの審査・設定完了後に使用）</div></div>
+
+<section id="categories"><div class="wrap">
+<div class="section-head"><h2>何について知りたい？</h2><p class="sub">気になるカテゴリから探してみよう。</p></div>
+<div class="categories">
+<a class="cat" href="#articles" data-key="勉強"><span class="cat-icon">📚</span><strong>学び・学校</strong><small>勉強の進め方や学校生活</small></a>
+<a class="cat" href="#articles" data-key="お金"><span class="cat-icon">💰</span><strong>お金・買い物</strong><small>お金の基本や節約のヒント</small></a>
+<a class="cat" href="#articles" data-key="スマホ"><span class="cat-icon">📱</span><strong>スマホ・ネット</strong><small>安全な使い方やデジタル知識</small></a>
+<a class="cat" href="#articles" data-key="暮らし"><span class="cat-icon">🏠</span><strong>毎日の暮らし</strong><small>家事や生活のちょっとした工夫</small></a>
+</div></div></section>
+
+<section class="featured" id="articles"><div class="wrap">
+<div class="section-head"><h2>お役立ち記事</h2><p class="sub">今日から試せる、小さなヒント。</p></div>
+<div class="articles" id="articleList">
+<article class="article" data-words="勉強 学び 学校 計画 テスト">
+<span class="tag">学び・学校</span><h3>勉強の計画を立てる、かんたんな3ステップ</h3><p>やることを書き出し、優先順位をつけて、短い時間から始める方法。</p>
+<details><summary>記事を読む</summary><p>①やることを全部書き出す。②提出日やテスト日が近いものから順番をつける。③「英単語を10個」など、今日できる小さな目標にする。終わったらチェックをつけ、できなかった分は翌日に無理なく調整しよう。休憩や睡眠も計画に入れるのが続けるコツです。</p></details></article>
+<article class="article" data-words="お金 節約 買い物 家計">
+<span class="tag">お金・買い物</span><h3>使ったお金を見える化する、はじめの一歩</h3><p>何に使ったかを記録して、自分に合う予算を考える基本。</p>
+<details><summary>記事を読む</summary><p>まず1週間、使った金額と内容をメモしてみよう。次に「必要だったもの」「あとで考えてもよかったもの」に分けると、お金の使い方の傾向が見えてきます。家計や契約など大切な判断は、信頼できる大人と一緒に確認しましょう。うまい話や先払いを求める副業には注意が必要です。</p></details></article>
+<article class="article" data-words="スマホ ネット SNS 安全 個人情報">
+<span class="tag">スマホ・ネット</span><h3>ネットで困らないための安全チェック</h3><p>個人情報、知らない相手、うますぎる話に気をつけるポイント。</p>
+<details><summary>記事を読む</summary><p>住所・学校名・電話番号・パスワードを公開しない。知らない人から届いたリンクやファイルはすぐ開かない。「絶対もうかる」「今だけ」と急がせる話は立ち止まって確認する。不安な連絡を受けたら、返信や支払いをする前に保護者や信頼できる人に相談しよう。</p></details></article>
+<article class="article" data-words="暮らし 家事 生活 掃除 整理">
+<span class="tag">毎日の暮らし</span><h3>片づけを始めやすくする5分ルール</h3><p>一度に全部やろうとせず、小さな場所から整える方法。</p>
+<details><summary>記事を読む</summary><p>机の上だけ、かばんの中だけなど、範囲をひとつに決めて5分だけ取り組む。残すもの・別の場所に戻すもの・処分するものに分けると進めやすくなります。迷うものは無理に捨てず、家族に確認してから決めよう。</p></details></article>
+<article class="article" data-words="時間 管理 習慣 予定 スケジュール">
+<span class="tag">時間の使い方</span><h3>予定を忘れにくくするシンプルな方法</h3><p>予定をひとつの場所にまとめ、前日に確認する習慣。</p>
+<details><summary>記事を読む</summary><p>学校や仕事、家の予定をひとつのカレンダーやノートにまとめる。予定を入れたら、準備に必要なものも一緒に書く。夜や朝に翌日の予定を確認すると、忘れ物や直前のあわてを減らせます。</p></details></article>
+<article class="article" data-words="買い物 比較 予算 必要">
+<span class="tag">お金・買い物</span><h3>買い物の前に確認したい3つのこと</h3><p>必要性・予算・条件を確かめて、納得できる選択を。</p>
+<details><summary>記事を読む</summary><p>買う前に「本当に必要か」「予算内か」「返品や解約の条件はどうなっているか」を確認しよう。広告や口コミだけで決めず、複数の情報を比べることも大切です。契約や高額な買い物は、保護者など信頼できる人と確認しましょう。</p></details></article>
+</div><p id="empty" hidden>その言葉に合う記事はまだありません。別の言葉でも探してみてね。</p>
+<div class="ad-slot"><strong>ADVERTISEMENT</strong>記事一覧下の広告掲載スペース（審査完了後に使用）</div>
+</div></section>
+
+<section id="about"><div class="wrap">
+<div class="help"><div><h2>ひとりで抱えず、まずは情報を。</h2><p>むずかしいことを、できるだけシンプルに。必要なときは信頼できる人や公的な窓口にもつなげます。</p></div><a class="button" href="#categories">カテゴリを見る</a></div>
+<div style="height:18px"></div>
+<div class="info-grid">
+<div class="info-card"><h3>運営者情報</h3><p>サイト名：くらしのミカタ<br>運営者：公開前に運営責任者の情報を記入してください。<br>連絡先：公開前に保護者と相談して、公開用の連絡方法を用意してください。</p></div>
+<div class="info-card"><h3>プライバシーについて</h3><p>この試作版の検索欄は入力内容をページ内で照合するだけで、サーバーへ送信・保存しません。広告やアクセス解析を導入する場合は、実際のデータ収集・Cookie等に合わせて説明を更新してください。</p></div>
+<div class="info-card"><h3>広告について</h3><p>現在、広告は配信していません。将来広告を掲載する場合は、広告であることが分かる表示を行い、広告サービスの規約と法令を確認します。</p></div>
+<div class="info-card"><h3>免責事項</h3><p>掲載内容は一般的な情報提供を目的としています。医療・法律・金融などの専門的助言ではありません。重要な判断は公的機関や専門家、保護者などに確認してください。</p></div>
+</div>
+</div></section>
+</main>
+<footer><div class="wrap footer-row"><span>© 2026 くらしのミカタ（試作版）</span><span><a href="#about">運営者・プライバシー・広告について</a>役立つ情報を、わかりやすく。</span></div></footer>
+<script>
+const form=document.getElementById('searchForm'),input=document.getElementById('query'),cards=[...document.querySelectorAll('.article')],empty=document.getElementById('empty'),result=document.getElementById('results');
+function search(q){const term=q.trim().toLowerCase();let count=0;cards.forEach(card=>{const text=(card.innerText+' '+card.dataset.words).toLowerCase();const show=!term||text.includes(term);card.hidden=!show;if(show)count++});empty.hidden=count!==0;result.textContent=term?(count?`「${q}」に関連する記事を表示しています。`:`「${q}」に合う記事はまだありません。`):'';document.getElementById('articles').scrollIntoView({behavior:'smooth'});}
+form.addEventListener('submit',e=>{e.preventDefault();search(input.value)});
+document.querySelectorAll('.cat').forEach(a=>a.addEventListener('click',()=>{input.value=a.dataset.key;search(a.dataset.key)}));
+</script>
+</body></html>
